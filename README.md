@@ -118,6 +118,12 @@ The canonical product is `career-intelligence-platform`.
 
 `job-tracker` and `ai-resume-copilot` are first-class modules within the same platform, while remaining architecturally separable enough to demonstrate individual engineering capabilities.
 
+## Architecture and security
+
+- `docs/ARCHITECTURE.md` — system boundary and canonical/advisory separation
+- `docs/ADR-001-event-ledger.md` — why canonical history is append-only and deterministic
+- `SECURITY.md` — privacy, logging, integration, and public-demo boundaries
+
 ## Safety and privacy
 
 - Gmail integration is designed for read-only scopes.
