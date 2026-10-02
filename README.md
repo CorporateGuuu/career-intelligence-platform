@@ -1,5 +1,7 @@
 # Career Intelligence Platform
 
+[![CI](https://github.com/CorporateGuuu/career-intelligence-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/CorporateGuuu/career-intelligence-platform/actions/workflows/ci.yml)
+
 A portfolio-grade career operating system that unifies deterministic job-application tracking with AI-assisted resume intelligence, interview preparation, recruiter follow-up, and career analytics.
 
 ## Why this project exists
@@ -145,6 +147,32 @@ This project is intentionally not kept on paid always-on hosting. The Replit env
 The canonical GitHub repository has been created under `CorporateGuuu`.
 
 GitHub is the canonical source of truth. The repository now contains executable FastAPI domain code, deterministic application-event projection, idempotent source-event protection, deterministic rules classification, resume/job matching primitives, regression tests, architecture/security documentation, and CI. Replit remains a secondary development/demo workspace rather than the authoritative code store.
+
+## Portfolio release status
+
+**Status: Portfolio-ready MVP**
+
+The repository currently demonstrates the intended hiring signal:
+
+- executable FastAPI backend
+- deterministic event-sourced application state
+- idempotent source-event protection
+- versioned rules classification
+- deterministic resume/job matching
+- Next.js + TypeScript portfolio dashboard
+- regression tests
+- GitHub Actions CI
+- security/privacy boundaries
+- architecture decision records
+- synthetic-data demo strategy
+
+CI is configured to verify repository hygiene, run backend regression tests, and build the frontend.
+
+### Deliberate stop point
+
+The portfolio release intentionally does **not** require production Gmail, Calendar, PostgreSQL, paid hosting, or a live LLM provider. Those remain future extensions rather than blockers for demonstrating system-design and engineering capability.
+
+The GitHub repository is the source of truth. The Replit workspace is an optional visual/demo environment and may sleep when not in use.
 
 ## Roadmap
 
