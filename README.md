@@ -132,11 +132,19 @@ The canonical product is `career-intelligence-platform`.
 - Secrets, tokens, resumes, and personal email contents must never be committed.
 - AI-generated recommendations are advisory and stored separately from canonical event history.
 
+## Demo / development workspace
+
+A development workspace is available in Replit:
+
+https://replit.com/replid/0de9925b-73d2-432b-89b5-31291673befa
+
+This project is intentionally not kept on paid always-on hosting. The Replit environment may sleep, require a manual run, or be unavailable between portfolio reviews. The GitHub repository is the canonical source of truth.
+
 ## Current status
 
 The canonical GitHub repository has been created under `CorporateGuuu`.
 
-The active implementation is being migrated from a separate Replit development workspace into this repository. Until the source migration is complete, this repository should be treated as the canonical portfolio/documentation location, not yet the complete deployable codebase.
+GitHub is the canonical source of truth. The repository now contains executable FastAPI domain code, deterministic application-event projection, idempotent source-event protection, deterministic rules classification, resume/job matching primitives, regression tests, architecture/security documentation, and CI. Replit remains a secondary development/demo workspace rather than the authoritative code store.
 
 ## Roadmap
 
