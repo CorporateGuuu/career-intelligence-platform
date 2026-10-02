@@ -1,0 +1,37 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+coverage/
+
+# Local databases and app data
+*.db
+*.sqlite
+*.sqlite3
+data/
+uploads/
+tmp/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
