@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  repository-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify required portfolio files
+        run: |
+          test -f README.md
+          test -f .env.example
+          test -f docs/ARCHITECTURE.md
+
+      - name: Secret-pattern sanity check
+        run: |
+          if grep -RInE --exclude-dir=.git --exclude='.env.example' '(OPENAI_API_KEY|GOOGLE_CLIENT_SECRET|JWT_SECRET|SESSION_SECRET)=[^[:space:]]+' .; then
+            echo "Potential committed secret-like value detected."
+            exit 1
+          fi
+
+      - name: Source migration notice
+        run: |
+          echo "Full application test jobs will replace this validation job when source migration lands."
