@@ -16,6 +16,8 @@ jobs:
           test -f README.md
           test -f .env.example
           test -f docs/ARCHITECTURE.md
+          test -f docs/ADR-001-event-ledger.md
+          test -f SECURITY.md
 
       - name: Secret-pattern sanity check
         run: |
