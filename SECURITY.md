@@ -2,6 +2,12 @@
 
 Career Intelligence Platform handles sensitive personal workflow data by design. The public repository therefore uses a strict separation between **portfolio-safe architecture** and any real user data.
 
+## Current executable boundary
+
+The current FastAPI append/list endpoints have no authenticated-principal or per-user authorization check. A process-global in-memory store is shared by requests; it is a development fixture, not a durable isolated user ledger. Do not put real resumes, mail, recruiter details or application histories into this prototype. The privacy controls below define the intended integration boundary; they do not imply that OAuth, durable storage or production access controls are already installed.
+
+The current Next.js dashboard contains static synthetic examples and disconnected review buttons. A displayed human-verified label does not prove a real review or an authorized backend mutation.
+
 ## Data classifications
 
 ### Public-safe
