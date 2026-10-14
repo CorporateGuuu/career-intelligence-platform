@@ -2,13 +2,23 @@
 
 [![CI](https://github.com/CorporateGuuu/career-intelligence-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/CorporateGuuu/career-intelligence-platform/actions/workflows/ci.yml)
 
-A portfolio-grade career operating system that unifies deterministic job-application tracking with AI-assisted resume intelligence, interview preparation, recruiter follow-up, and career analytics.
+A synthetic portfolio prototype for deterministic application-event tracking, with rules-based classification and resume/job term-matching primitives. The broader career operating system remains the product direction.
 
 ## Why this project exists
 
 Most career tools treat applications, resumes, recruiter emails, interviews, and analytics as separate workflows. Career Intelligence Platform combines them into one auditable system while keeping AI advisory rather than authoritative over canonical application history.
 
-## Core modules
+## Implemented prototype and verified evidence
+
+The current FastAPI application exposes health/readiness plus append/list application-event endpoints. It uses a process-global in-memory store, rejects path/payload application-ID mismatches and duplicate source events, and derives application status deterministically. Separate Python primitives implement rules classification and resume/job term coverage.
+
+The Next.js page displays hardcoded synthetic metrics, timeline, match and review examples. Its review buttons have no save handlers and it does not fetch application data from the API. The displayed numbers are fixture content, not actual applications, interviews or offers.
+
+Exact main revision `d505521729f90bee2930bf7da61b679b138b87be` has [hosted CI36956650925](https://github.com/CorporateGuuu/career-intelligence-platform/actions/runs/36956650925) SUCCESS: the actual API log reports13 passing tests and the frontend build job passed. These tests/builds establish this bounded prototype, not the planned product modules below.
+
+Readiness explicitly reports an in-memory development database and unconfigured Gmail/AI provider. The current API has no authenticated-principal or per-user authorization boundary, and data does not survive process restart. Use synthetic data only; production storage, authenticated access, real ingestion, provider integration and API-backed review remain separate work.
+
+## Planned product modules
 
 ### Job Tracker
 - Gmail read-only ingestion boundary
@@ -112,7 +122,7 @@ This repository is intended to demonstrate:
 - analytics and exports
 - testing and CI/CD
 - security and least-privilege design
-- idempotent and auditable production workflows
+- idempotent and auditable workflow design; production acceptance is separate
 
 ## Repository direction
 
@@ -150,7 +160,7 @@ GitHub is the canonical source of truth. The repository now contains executable 
 
 ## Portfolio release status
 
-**Status: Portfolio-ready MVP**
+**Status: Synthetic portfolio prototype; full product modules remain planned**
 
 The repository currently demonstrates the intended hiring signal:
 
@@ -159,10 +169,10 @@ The repository currently demonstrates the intended hiring signal:
 - idempotent source-event protection
 - versioned rules classification
 - deterministic resume/job matching
-- Next.js + TypeScript portfolio dashboard
+- Next.js + TypeScript static synthetic portfolio dashboard
 - regression tests
 - GitHub Actions CI
-- security/privacy boundaries
+- documented security/privacy boundaries (not production authenticated access)
 - architecture decision records
 - synthetic-data demo strategy
 
